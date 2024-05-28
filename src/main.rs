@@ -2,14 +2,13 @@ fn main() { }
 
 #[cfg(test)]
 mod tests {
-    use std::time::{Duration, Instant};
-    use timeouts::Timeout;
+    use std::time::Duration;
+    use overtime::timeout::Timeout;
 
     #[test]
     fn expiry_test() {
         let t = Timeout::new(Duration::from_millis(100));
 
-        let now = Instant::now();
         // sleep for less than the timeout and check expiry
         spin_sleep::sleep(Duration::from_millis(10));
         assert!(!t.expired());

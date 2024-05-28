@@ -1,5 +1,5 @@
 [package]
-name = "timeouts"
+name = "overtime"
 version = "0.1.0"
 edition = "2021"
 
